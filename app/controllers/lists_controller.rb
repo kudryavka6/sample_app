@@ -9,7 +9,7 @@ def create
   
   list.save
   
-  redirect_to '/top'
+  redirect_to list_path(list.id)
 end
 
   def index
@@ -17,6 +17,7 @@ end
   end
 
   def show
+    @list=List.find(params[:id])
   end
 
   def edit
